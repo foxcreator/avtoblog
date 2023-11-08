@@ -84,7 +84,10 @@
             @endif
             @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="btn btn-sm btn-outline-dark">Реестрація</a>
-        @endif
+            @endif
+{{--            @if (Route::has('register'))--}}
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-dark">Admin Panel</a>
+{{--            @endif--}}
             <!-- ======= Search Form ======= -->
             <div class="search-form-wrap js-search-form-wrap">
                 <form action="search-result.html" class="search-form">

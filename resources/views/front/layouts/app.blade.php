@@ -78,16 +78,29 @@
 
             <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
             <i class="bi bi-list mobile-nav-toggle"></i>
-
+            @guest()
             @if (Route::has('login'))
                     <a href="{{ route('login') }}" class="btn btn-sm btn-outline-dark ms-2">Логін</a>
             @endif
             @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="btn btn-sm btn-outline-dark">Реестрація</a>
             @endif
-{{--            @if (Route::has('register'))--}}
+
+            @endguest
+            @auth()
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-dark">Admin Panel</a>
-{{--            @endif--}}
+
+                <a class="btn btn-sm btn-outline-dark ms-2" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();"
+                >
+                    Вийти
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            @endauth
             <!-- ======= Search Form ======= -->
             <div class="search-form-wrap js-search-form-wrap">
                 <form action="search-result.html" class="search-form">

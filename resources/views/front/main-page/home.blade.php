@@ -3,6 +3,7 @@
 @section('content')
     <!-- ======= Hero Slider Section ======= -->
     @include('front.main-page.slider')
+    @include('front.main-page.posts-grid')
     <!-- End Hero Slider Section -->
 
     <!-- ======= Post Grid Section ======= -->

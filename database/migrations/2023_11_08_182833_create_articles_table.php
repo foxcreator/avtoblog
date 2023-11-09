@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('');
+            $table->string('subtitle')->nullable();
+            $table->text('text');
+            $table->string('image');
+            $table->boolean('to_slider');
             $table->timestamps();
         });
     }

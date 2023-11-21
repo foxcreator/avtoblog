@@ -22,7 +22,9 @@ class CreateCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|min:3|max:15|unique:categories',
+            'name' => 'required|min:3|max:30|unique:categories',
+            'meta_description' => 'required|min:20|max:200',
+            'image' => 'required',
         ];
     }
 }

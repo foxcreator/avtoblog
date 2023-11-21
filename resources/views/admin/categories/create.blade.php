@@ -34,6 +34,38 @@
                             </span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <label>Meta description (max 40 symbols)</label>
+                            <input type="text" name="meta_description"
+                                   value="{{ old('meta_description') }}"
+                                   class="form-control
+                                   @error('meta_description') is-invalid @enderror"
+                                   placeholder="Meta description" required
+                            >
+                            @error('meta_description')
+                            <span class="invalid-feedback">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="feature_image">Feature Image</label>
+                            <input class="form-control col-md-6 @error('image') is-invalid @enderror"
+                                   type="text"
+                                   id="feature_image"
+                                   name="image"
+                                   value=""
+                                   readonly
+                            >
+                            <img src="" alt="" class="img-uploaded img-thumbnail" width="150">
+                            <a href="" class="popup_selector" data-inputid="feature_image">Select Image</a>
+
+                            @error('image')
+                            <span class="invalid-feedback">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
                         <button type="submit" class="btn bt-sm btn-outline-success">Create</button>
                     </form>
                 </div>

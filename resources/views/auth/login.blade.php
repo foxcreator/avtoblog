@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5 mb-5">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -57,11 +57,11 @@
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+{{--                                @if (Route::has('password.request'))--}}
+                                    <a class="btn btn-link" href="{{ route('google.auth') }}">
+                                        Google Auth
                                     </a>
-                                @endif
+{{--                                @endif--}}
                             </div>
                         </div>
                     </form>

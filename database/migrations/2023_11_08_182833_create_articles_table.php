@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('subtitle')->nullable();
             $table->text('text');
             $table->string('image');
-            $table->boolean('to_slider');
+            $table->boolean('to_slider')->default(false);
             $table->timestamps();
         });
     }

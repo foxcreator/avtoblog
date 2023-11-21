@@ -14,9 +14,9 @@ class MainController extends Controller
         $this->middleware('auth');
     }
 
-    public function homePage()
-    {
-        $posts = Article::all();
-        return view('front.main-page.home', compact('posts'));
-    }
+//    public function homePage()
+//    {
+//        $posts = Article::all();
+//        return view('front.main-page.home', compact('posts'));
+//    }
 }

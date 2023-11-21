@@ -4,9 +4,9 @@
             <div class="col-12">
                 <div class="swiper sliderFeaturedPosts">
                     <div class="swiper-wrapper">
-                        @foreach($articles as $article)
+                        @foreach($toSliderArticles as $article)
                         <div class="swiper-slide">
-                            <a href="{{ route('show.post', $article->id) }}" class="img-bg d-flex align-items-end"
+                            <a href="{{ route('show.article', $article->id) }}" class="img-bg d-flex align-items-end"
                                style="background-image: url({{ asset($article->image) }});">
                                 <div class="img-bg-inner">
                                     <h2>{{ $article->title }}</h2>

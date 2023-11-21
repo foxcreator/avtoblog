@@ -11,9 +11,11 @@ class Category extends Model
 
     protected $fillable = [
         'name',
+        'meta_description',
+        'image',
     ];
 
-    public function article()
+    public function articles()
     {
         return $this->belongsToMany(Article::class);
     }

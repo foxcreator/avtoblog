@@ -25,6 +25,7 @@
                                 <th>Image</th>
                                 <th>Title</th>
                                 <th>Date</th>
+                                <th>Visible in slider</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -32,13 +33,16 @@
                             @foreach($posts as $post)
                             <tr>
                                 <td class="align-middle">{{ $post->id }}</td>
-                                <td class="align-middle"><img class="img-thumbnail" style="width: 100px" src="{{ asset('assets/img/2022_lexus_ls-500.jpeg') }}"></td>
+                                <td class="align-middle"><img class="img-thumbnail" style="width: 100px" src="{{ asset($post->image) }}"></td>
                                 <td class="align-middle">{{ $post->title }}</td>
                                 <td class="align-middle">{{ \Carbon\Carbon::make($post->created_at)->format('d-m-Y') }}</td>
                                 <td class="align-middle">
-                                    <a href="">1</a>
-                                    <a href="">2</a>
-                                    <a href="">3</a>
+                                    @if($post->to_slider)
+                                        <i class="fas fa-check-square text-success"></i>
+                                    @endif
+                                </td>
+                                <td class="align-middle">
+                                    <a href="{{ route('admin.posts.edit', $post->id) }}"><i class="fas fa-edit"></i></a>
                                 </td>
                             </tr>
                             @endforeach

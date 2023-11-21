@@ -53,7 +53,9 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $post = Article::find($id);
+        $categories = Category::all();
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**
@@ -61,7 +63,16 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+        $article->to_slider = $request->has('to_slider');
+        $article->save();
+
+        $categories = $request->input('categories', []);
+        $article->categories()->sync($categories);
+
+        return redirect()->route('admin.posts.index')->with('success', 'Post editing!');
     }
 
     /**

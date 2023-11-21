@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Create Post</h1>
+                        <h1 class="m-0">Edit Post #{{ $post->id }}</h1>
                     </div>
                     <div class="col-sm-6">
 
@@ -16,12 +16,13 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <form action="{{ route('admin.posts.store') }}" class="col-md-10 mb-5" method="POST">
+                    <form action="{{ route('admin.posts.update', $post->id) }}" class="col-md-10 mb-5" method="POST">
                         @csrf
+                        @method('PUT')
                         <div class="form-group">
                             <label>Header</label>
                             <input type="text" name="title"
-                                   value="{{ old('title') }}"
+                                   value="{{ old('title', $post->title) }}"
                                    class="form-control
                                    @error('title') is-invalid @enderror"
                                    placeholder="Enter article title" required
@@ -37,7 +38,7 @@
                         <div class="form-group">
                             <label>Subtitle</label>
                             <input type="text" name="subtitle"
-                                   value="{{ old('subtitle') }}"
+                                   value="{{ old('subtitle', $post->subtitle) }}"
                                    class="form-control
                                    @error('subtitle') is-invalid @enderror"
                                    placeholder="Enter article title"
@@ -52,8 +53,10 @@
                         <div class="form-group">
                             <label>Category</label>
                             <select class="select2" name="categories[]" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+
                                 @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+{{--                                    Перебрать и выбрать категории--}}
+                                    <option value="{{ $category->id }}" @if($post->categories->contains($category->id)) selected @endif>{{ $category->name }}</option>
                                 @endforeach
                             </select>
 
@@ -68,7 +71,7 @@
                             <textarea name="text"
                                       class="form-control tiny-editor @error('text') is-invalid @enderror"
                             >
-                                {{ old('text') }}
+                                {{ old('text', $post->text) }}
                             </textarea>
                             @error('text')
                             <span class="invalid-feedback">
@@ -78,11 +81,11 @@
                         </div>
                         <div class="form-group">
                             <label for="feature_image">Feature Image</label>
-                            <input class="form-control col-md-6" type="text" id="feature_image" name="image" value="" readonly>
-                            <img src="" alt="" class="img-uploaded img-thumbnail" width="150">
+                            <input class="form-control col-md-6" type="text" id="feature_image" name="image" value="{{ $post->image }}" readonly>
+                            <img src="{{ asset($post->image) }}" alt="" class="img-uploaded img-thumbnail" width="150">
                             <a href="" class="popup_selector" data-inputid="feature_image">Select Image</a>
 
-                            @error('subtitle')
+                            @error('image')
                             <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -90,7 +93,7 @@
                         </div>
                         <div class="form-group">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" name="to_slider" class="custom-control-input mr-3" id="customSwitch1" value="1">
+                                <input type="checkbox" name="to_slider" class="custom-control-input mr-3" id="customSwitch1" value="1" @if($post->to_slider) checked @endif>
                                 <label class="custom-control-label" for="customSwitch1">Show in main slider</label>
                             </div>
 
@@ -101,7 +104,8 @@
                             </span>
                             @enderror
                         </div>
-                        <button type="submit" class="btn bt-sm btn-outline-success">Create</button>
+                        <a href="{{ route('admin.posts.index') }}" class="btn bt-sm btn-outline-dark">Back</a>
+                        <button type="submit" class="btn bt-sm btn-outline-success">Save</button>
 
                     </form>
                 </div>

@@ -22,8 +22,8 @@ class CreateArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|min:6|max:40|unique:articles',
-            'subtitle' => 'required|min:6|max:200',
+            'title' => 'required|min:6|max:200|unique:articles',
+            'subtitle' => 'required|min:6|max:300',
             'text' => 'required|min:40',
             'image' => 'required',
             'to_slider' => 'required',

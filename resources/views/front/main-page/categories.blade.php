@@ -53,7 +53,7 @@
                             <div class="post-meta"><span class="date">{{ $category->name }}</span> <span class="mx-1">&bullet;</span>
                                 <span>{{ \Carbon\Carbon::make($article->created_at)->format('d.m.Y') }}</span></div>
                             <h2 class="mb-2"><a href="{{ route('show.article', $article->id) }}">{{ $article->title }}</a></h2>
-                            <span class="author mb-3 d-block">Jenny Wilson</span>
+                            <span class="author mb-3 d-block">{{ $article->user?->name }}</span>
                         </div>
                     @empty
                         {{-- No articles found in this category. --}}

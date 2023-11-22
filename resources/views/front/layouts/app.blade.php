@@ -92,8 +92,9 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
 
             @endguest
             @auth()
+                @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('admin'))
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-dark">Admin Panel</a>
-
+                @endif
                 <a class="btn btn-sm btn-outline-dark ms-2" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();"

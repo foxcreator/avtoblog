@@ -30,6 +30,7 @@ class SocialiteController extends Controller
 
         if (!$user) {
             $user = User::create($data);
+            $user->assignRole('user');
         }
 
         Auth::login($user);

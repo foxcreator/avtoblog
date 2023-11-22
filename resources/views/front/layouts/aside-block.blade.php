@@ -1,5 +1,5 @@
 <?php
-$popular = \App\Models\Article::all()->random(6);
+$popular = \App\Models\Article::all()->take(6);
 $latest = \App\Models\Article::orderBy('created_at', 'desc')->take(6)->get();
 $categories = \App\Models\Category::all();
 ?>

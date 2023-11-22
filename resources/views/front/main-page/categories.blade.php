@@ -1,6 +1,7 @@
 <section class="category-section">
     <div class="container" data-aos="fade-up">
         @foreach($randomCategories as $index => $category)
+            @if(count($category->articles) > 0)
             @php $isEvenIteration = $index % 2 == 0; @endphp
             <div class="section-header d-flex justify-content-between align-items-center mb-5">
                 <h2>{{ $category->name }}</h2>
@@ -59,6 +60,7 @@
                     @endforelse
                 </div>
             </div>
+            @endif
         @endforeach
     </div>
 </section>

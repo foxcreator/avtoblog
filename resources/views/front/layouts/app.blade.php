@@ -92,8 +92,9 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
 
             @endguest
             @auth()
+                @if(auth()->user()->hasRole('admin') || auth()->user()->hasRole('writer'))
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-dark">Admin Panel</a>
-
+                @endif
                 <a class="btn btn-sm btn-outline-dark ms-2" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                    document.getElementById('logout-form').submit();"
@@ -110,7 +111,7 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
             <div class="search-form-wrap js-search-form-wrap">
                 <form action="search-result.html" class="search-form">
                     <span class="icon bi-search"></span>
-                    <input type="text" placeholder="Search" class="form-control">
+                    <input type="text" placeholder="Нажаль пошук ще у розробці :(" class="form-control" readonly>
                     <button class="btn js-search-close"><span class="bi-x"></span></button>
                 </form>
             </div>

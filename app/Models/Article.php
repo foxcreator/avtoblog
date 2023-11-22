@@ -15,6 +15,7 @@ class Article extends Model
         'text',
         'image',
         'to_slider',
+        'user_id',
     ];
 
     public function categories()

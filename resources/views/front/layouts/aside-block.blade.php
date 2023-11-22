@@ -27,7 +27,7 @@ $categories = \App\Models\Category::all();
                     <div class="post-entry-1 border-bottom">
                         <div class="post-meta">
                             @foreach($article->categories as $category)
-                                <a href="#">
+                                <a href="{{ route('category.post', $category->id) }}">
                                     <span class="date">{{ $category->name }}</span>
                                 </a>
                             @endforeach

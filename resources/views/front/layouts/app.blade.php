@@ -85,7 +85,7 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
                 @if (Route::has('register'))
 
                         <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#register">
-                            Реєстрція
+                            Реєстрація
                         </button>
 {{--                    <a href="{{ route('register') }}" class="btn btn-sm btn-outline-dark">Реестрація</a>--}}
                 @endif
@@ -159,7 +159,7 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
-                    <h3 class="footer-heading">Категрії</h3>
+                    <h3 class="footer-heading">Категорії</h3>
                     <ul class="footer-links list-unstyled">
                         @foreach($categories as $category)
                             <li><a href="{{ route('category.post', $category->id) }}"><i

@@ -12,6 +12,8 @@ class Authenticate extends Middleware
      */
     protected function redirectTo(Request $request): ?string
     {
+        //Todo Debag code
         return $request->expectsJson() ? null : route('login');
+//        return null;
     }
 }

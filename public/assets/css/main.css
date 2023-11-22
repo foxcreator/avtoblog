@@ -1321,3 +1321,8 @@ section {
     border-radius: 10px;
     /* Другие стили */
 }
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}

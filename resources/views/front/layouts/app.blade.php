@@ -144,18 +144,18 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
                         тематикою та намагаємося ділитися цікавою і корисною інформацією про світ автомобілів.
                     </p>
                     <p>Якщо у вас є питання або пропозиції, будь ласка, зв'яжіться з нами за допомогою
-                        <a href="about.html" class="footer-link-more">форми зворотнього зв'язку</a>
+                        <a href="#" class="footer-link-more">форми зворотнього зв'язку</a>
                     </p>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h3 class="footer-heading">Навігація</h3>
                     <ul class="footer-links list-unstyled">
-                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Головна</a></li>
+                        <li><a href="{{ route('home') }}"><i class="bi bi-chevron-right"></i> Головна</a></li>
                         {{--                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Blog</a></li>--}}
-                        <li><a href="category.html"><i class="bi bi-chevron-right"></i> Категорії</a></li>
+                        <li><a href="{{ route('categories.all') }}"><i class="bi bi-chevron-right"></i> Категорії</a></li>
                         {{--                        <li><a href="single-post.html"><i class="bi bi-chevron-right"></i> Single Post</a></li>--}}
-                        <li><a href="about.html"><i class="bi bi-chevron-right"></i> Про нас</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Контакти</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Про нас</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Контакти</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">

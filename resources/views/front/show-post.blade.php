@@ -19,7 +19,7 @@
                             <span>{{ \Carbon\Carbon::make($article->created_at)->format('d.m.Y') }}</span>
                         </div>
                         <h1 class="mb-5">{{ $article->title }}</h1>
-                        <img src="{{ asset($article->image) }}" width="730px" alt="{{ $article->title }}" class="image mb-5">
+                        <img src="{{ asset($article->image) }}" style="width: 100%" alt="{{ $article->title }}" class="image mb-5">
 
                         {!! $article->text !!}
                     </div>
@@ -34,7 +34,7 @@
                                             @if($comment->user->avatar)
                                                 <img class="avatar-img img-fluid" src="https://lh3.googleusercontent.com/a/ACg8ocILXzf3qACDVANMcZgZ6JAy9nE_1OrfYjvfZeJhcgLc=s96-c" alt="">
                                             @else
-                                            <img class="avatar-img img-fluid" src="{{ asset('assets/img/person-3.jpg') }}" alt="{{ $comment->user->name }}">
+                                                <img class="avatar-img img-fluid" src="{{ asset('assets/img/person-3.jpg') }}" alt="{{ $comment->user->name }}">
                                             @endif
                                         </div>
                                     </div>

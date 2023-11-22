@@ -26,7 +26,8 @@ class CreateArticleRequest extends FormRequest
             'subtitle' => 'required|min:6|max:200',
             'text' => 'required|min:40',
             'image' => 'required',
-            'to_slider' => 'required'
+            'to_slider' => 'required',
+            'user_id' => 'required',
         ];
     }
 }

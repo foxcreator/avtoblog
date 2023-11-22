@@ -101,6 +101,7 @@
                             </span>
                             @enderror
                         </div>
+                        <input type="hidden" value="{{ auth()->user()->getAuthIdentifier() }}" name="user_id">
                         <button type="submit" class="btn bt-sm btn-outline-success">Create</button>
 
                     </form>

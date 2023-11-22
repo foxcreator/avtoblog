@@ -13,12 +13,18 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->after('id');
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('text');
             $table->string('image');
+            $table->string('video_url')->after('image')->nullable();
+            $table->string('video_preview')->after('video_url')->nullable();
             $table->boolean('to_slider')->default(false);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

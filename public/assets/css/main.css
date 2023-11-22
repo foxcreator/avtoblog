@@ -212,7 +212,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Desktop Navigation 
+# Desktop Navigation
 --------------------------------------------------------------*/
 @media (min-width: 1280px) {
   .navbar {
@@ -1297,4 +1297,27 @@ section {
 
 .footer .credits a {
   color: var(--color-white);
+}
+
+/* Стили для контейнера модального окна */
+.auth-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('storage/app/public/photo1.png');
+    background-size: cover;
+    background-position: center;
+    background-blur: 5px; /* Если вы используете CSS-фильтр размытия, чтобы сделать фон более размытым */
+}
+
+/* Прозрачность модального окна и другие стили можно настроить в соответствии с вашим дизайном */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Прозрачность модального окна */
+    border-radius: 10px;
+    /* Другие стили */
 }

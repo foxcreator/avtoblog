@@ -31,8 +31,12 @@
                                 <div class="comment d-flex mb-4">
                                     <div class="flex-shrink-0">
                                         <div class="avatar avatar-sm rounded-circle">
-                                            <img class="avatar-img" src="{{ asset('assets/img/person-5.jpg') }}" alt=""
+                                            @if($comment->user->avatar)
+                                                <img class="avatar-img img-fluid" src="https://lh3.googleusercontent.com/a/ACg8ocILXzf3qACDVANMcZgZ6JAy9nE_1OrfYjvfZeJhcgLc=s96-c" alt="">
+                                            @else
+                                            <img class="avatar-img" src="{{ asset('assets/img/person-3.jpg') }}" alt=""
                                                  class="img-fluid">
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="flex-grow-1 ms-2 ms-sm-3">

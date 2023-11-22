@@ -32,9 +32,7 @@ class SocialiteController extends Controller
             $user = User::create($data);
         }
 
-//        dd($user);
         Auth::login($user);
-
-       return redirect()->back()->with('status', 'Ви успішно увійшли!');
+        return redirect()->intended()->with('status', 'Ви успішно увійшли!');
     }
 }

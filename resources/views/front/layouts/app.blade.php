@@ -30,6 +30,8 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+
 
     <!-- Template Main CSS Files -->
     <link href="{{ asset('assets/css/variables.css') }}" rel="stylesheet">
@@ -75,10 +77,17 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
             <a href="#" class="mx-2 js-search-open"><span class="bi-search"></span></a>
             @guest()
                 @if (Route::has('login'))
-                    <a href="{{ route('login') }}" class="btn btn-sm btn-outline-dark ms-2">Логін</a>
+{{--                    <a href="{{ route('login') }}" class="btn btn-sm btn-outline-dark ms-2">Логін</a>--}}
+                    <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Логін
+                    </button>
                 @endif
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="btn btn-sm btn-outline-dark">Реестрація</a>
+
+                        <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#register">
+                            Реєстрція
+                        </button>
+{{--                    <a href="{{ route('register') }}" class="btn btn-sm btn-outline-dark">Реестрація</a>--}}
                 @endif
 
             @endguest
@@ -115,6 +124,9 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
 
 <main id="main">
     @yield('content')
+    @include('auth.login-modal')
+    @include('auth.register-modal')
+
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->

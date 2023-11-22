@@ -6,7 +6,7 @@
     <section>
         <div class="container">
             <div class="row">
-
+    @if($articles->count() > 0)
                 <div class="col-md-9" data-aos="fade-up">
                     <h3 class="category-title">Категорія: {{ $category->name }}</h3>
                     @foreach($articles as $article)
@@ -24,6 +24,11 @@
                     @endforeach
                     {{ $articles->links() }}
                 </div>
+                @else
+                    <div class="col-md-9" data-aos="fade-up">
+                    <h3>Нажаль в цій категоріх ще немае статей. Вам є що написати? Св'яжіться з нами</h3>
+                    </div>
+                @endif
                 @include('front.layouts.aside-block')
             </div>
         </div>

@@ -23,7 +23,7 @@ class CreateArticleRequest extends FormRequest
     {
         return [
             'title' => 'required|min:6|max:200|unique:articles',
-            'subtitle' => 'required|min:6|max:300',
+            'subtitle' => 'required|min:6|max:500',
             'text' => 'required|min:40',
             'image' => 'required',
             'to_slider' => 'required',

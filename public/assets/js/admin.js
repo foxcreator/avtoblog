@@ -11,6 +11,7 @@ tinymce.init({
     ],
     image_class_list: [
         { title: 'Responsive', value: 'img-responsive' },
+        { title: 'Responsive Double', value: 'img-responsive-double' },
         // Добавьте свои стили, если необходимо
     ],
     image_dimensions: true,

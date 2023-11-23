@@ -1321,3 +1321,22 @@ section {
     border-radius: 10px;
     /* Другие стили */
 }
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.img-responsive-double {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+@media (min-width: 768px) {
+    .img-responsive-double {
+        display: inline-block;
+        width: 49%;
+        height: auto;
+    }
+}
+

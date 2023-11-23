@@ -1,5 +1,5 @@
 <?php
-$popular = \App\Models\Article::all()->random(6);
+$popular = \App\Models\Article::all()->take(6);
 $latest = \App\Models\Article::orderBy('created_at', 'desc')->take(6)->get();
 $categories = \App\Models\Category::all();
 ?>
@@ -36,7 +36,7 @@ $categories = \App\Models\Category::all();
                         </div>
 
                         <h2 class="mb-2"><a href="{{ route('show.article', $article->id) }}">{{ $article->title }}</a></h2>
-                        <span class="author mb-3 d-block">Admin</span>
+                        <span class="author mb-3 d-block">{{ $article->user?->name }}</span>
                     </div>
                 @endforeach
 
@@ -52,7 +52,7 @@ $categories = \App\Models\Category::all();
                             @endforeach
                             <span class="mx-1">&bullet;</span> <span>{{ \Carbon\Carbon::parse($article->created_at)->diffForHumans() }}</span></div>
                         <h2 class="mb-2"><a href="{{ route('show.article', $article->id) }}">{{ $article->title }}</a></h2>
-                        <span class="author mb-3 d-block">Admin</span>
+                        <span class="author mb-3 d-block">{{ $article->user?->name }}</span>
                     </div>
                 @endforeach
 

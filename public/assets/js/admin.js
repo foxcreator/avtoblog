@@ -9,6 +9,11 @@ tinymce.init({
         { value: 'First.Name', title: 'First Name' },
         { value: 'Email', title: 'Email' },
     ],
+    image_class_list: [
+        { title: 'Responsive', value: 'img-responsive' },
+        { title: 'Responsive Double', value: 'img-responsive-double' },
+        // Добавьте свои стили, если необходимо
+    ],
     image_dimensions: true,
     setup: function (editor) {
         editor.on('BeforeSetContent', function (e) {

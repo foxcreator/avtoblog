@@ -34,7 +34,7 @@
                                             @if($comment->user->avatar)
                                                 <img class="avatar-img img-fluid" src="https://lh3.googleusercontent.com/a/ACg8ocILXzf3qACDVANMcZgZ6JAy9nE_1OrfYjvfZeJhcgLc=s96-c" alt="">
                                             @else
-                                                <img class="avatar-img img-fluid" src="{{ asset('assets/img/person-3.jpg') }}" alt="{{ $comment->user->name }}">
+                                                <img class="avatar-img img-fluid" src="{{ asset('assets/img/user-image.png') }}" alt="{{ $comment->user->name }}">
                                             @endif
                                         </div>
                                     </div>

@@ -36,9 +36,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- TinyMCE text -->
-{{--    <script src="https://cdn.tiny.cloud/1/vf1hunsd4mg70adqioziqe2ttykrqnup4xafl5xhnz527lxk/tinymce/6/tinymce.min.js"--}}
-{{--            referrerpolicy="origin"></script>--}}
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/vf1hunsd4mg70adqioziqe2ttykrqnup4xafl5xhnz527lxk/tinymce/6/tinymce.min.js"
+            referrerpolicy="origin"></script>
+{{--    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
 
 
 </head>

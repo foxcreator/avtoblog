@@ -1335,7 +1335,7 @@ section {
 @media (min-width: 768px) {
     .img-responsive-double {
         display: inline-block;
-        width: 45%;
+        width: 49%;
         height: auto;
     }
 }

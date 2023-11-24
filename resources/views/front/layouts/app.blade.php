@@ -37,6 +37,8 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
     <link href="{{ asset('assets/css/variables.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8175986939118814"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>

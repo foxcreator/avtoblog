@@ -1,6 +1,6 @@
 tinymce.init({
     selector: '.tiny-editor',
-    plugins: ' anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount autocorrect a11ychecker typography',
+    plugins: ' anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks fontsize | bold italic underline strikethrough align | link image | emoticons charmap table | checklist numlist bullist indent outdent' ,
     tinycomments_mode: 'embedded',
     tinycomments_author: 'BSV',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Spatie\Sitemap\SitemapGenerator;
 
 class HomeController extends Controller
 {
@@ -57,5 +58,15 @@ class HomeController extends Controller
         $categories = Category::orderBy('created_at', 'desc')->get();
 
         return view('front.categories.categories', compact('categories'));
+    }
+
+    public function sitemap()
+    {
+        $path = public_path('sitemap.xml');
+        if (file_exists($path)) {
+            unlink($path);
+        }
+        SitemapGenerator::create('https://youravto.com.ua/')->writeToFile($path);
+        return redirect()->back()->with('success', 'Sitemap file has been update');
     }
 }

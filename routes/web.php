@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +27,7 @@ Auth::routes();
 Route::post('/create-comment', [App\Http\Controllers\Front\CommentsController::class, 'store'])->name('comment.store');
 
 Route::prefix('admin')->middleware('role:admin|writer')->name('admin.')->group(function () {
+    Route::get('/sitemap', [\App\Http\Controllers\HomeController::class, 'sitemap'])->name('sitemap');
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])
         ->name('dashboard');
     Route::resource('posts', App\Http\Controllers\Admin\PostController::class);

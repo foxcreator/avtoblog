@@ -76,7 +76,18 @@
                         </div>
                     </div>
                     <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <a href="{{ route('admin.sitemap') }}" class="small-box bg-gradient-navy text-center">
+                            <div class="inner">
+                                <h4>Generate sitemap</h4>
+                            </div>
+                        </a>
+                        <!-- ./col -->
+                    </div>
                 </div>
+
+
             </div>
         </section>
     </div>

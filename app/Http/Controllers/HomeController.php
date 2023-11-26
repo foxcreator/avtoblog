@@ -25,9 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $toSliderArticles = Article::where('to_slider', true)->get();
+        $toSliderArticles = Article::where('to_slider', true)->orderBy('created_at', 'desc')->get();
         $articles = Article::orderBy('created_at', 'desc')->get();
-        $randomArticles = Article::get()->random(6);
+        $randomArticles = Article::get()->take(6);
 //        $randomCategories = Category::get()->random(6);
         $randomCategories = Category::all();
         return view('front.main-page.home', compact(

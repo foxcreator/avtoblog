@@ -12,6 +12,16 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
     <title>@yield('title') | Твоє авто</title>
     {{--    <meta content="Оновлення в автоіндустрії та власноручна майстерність на кожному кроці." name="description">--}}
     <meta content="@yield('description')" name="description">
+    <meta content="Автомобільні новини,
+     Поради вибору автомобіля,
+     Технічні інновації в автоіндустрії,
+     Ремонт та обслуговування автомобілів,
+     Класичні автомобілі та їх історія,
+     Світові тренди в автомобільній промисловості,
+     Тюнінг та персоналізація авто, Автомобільна безпека та технології,
+     Електричні та гібридні автомобілі,
+     Подорожі на автомобілі: кращі маршрути та поради"
+          name="keywords">
 
     <!-- Favicons -->
     <link href="{{ asset('assets/img/front/logoforblog.png') }}" rel="icon">
@@ -37,6 +47,8 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
     <link href="{{ asset('assets/css/variables.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8175986939118814"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -85,7 +97,7 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
                 @if (Route::has('register'))
 
                         <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#register">
-                            Реєстрція
+                            Реєстрація
                         </button>
 {{--                    <a href="{{ route('register') }}" class="btn btn-sm btn-outline-dark">Реестрація</a>--}}
                 @endif
@@ -144,22 +156,22 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
                         тематикою та намагаємося ділитися цікавою і корисною інформацією про світ автомобілів.
                     </p>
                     <p>Якщо у вас є питання або пропозиції, будь ласка, зв'яжіться з нами за допомогою
-                        <a href="about.html" class="footer-link-more">форми зворотнього зв'язку</a>
+                        <a href="#" class="footer-link-more">форми зворотнього зв'язку</a>
                     </p>
                 </div>
                 <div class="col-6 col-lg-2">
                     <h3 class="footer-heading">Навігація</h3>
                     <ul class="footer-links list-unstyled">
-                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Головна</a></li>
+                        <li><a href="{{ route('home') }}"><i class="bi bi-chevron-right"></i> Головна</a></li>
                         {{--                        <li><a href="index.html"><i class="bi bi-chevron-right"></i> Blog</a></li>--}}
-                        <li><a href="category.html"><i class="bi bi-chevron-right"></i> Категорії</a></li>
+                        <li><a href="{{ route('categories.all') }}"><i class="bi bi-chevron-right"></i> Категорії</a></li>
                         {{--                        <li><a href="single-post.html"><i class="bi bi-chevron-right"></i> Single Post</a></li>--}}
-                        <li><a href="about.html"><i class="bi bi-chevron-right"></i> Про нас</a></li>
-                        <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Контакти</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Про нас</a></li>
+                        <li><a href="#"><i class="bi bi-chevron-right"></i> Контакти</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2">
-                    <h3 class="footer-heading">Категрії</h3>
+                    <h3 class="footer-heading">Категорії</h3>
                     <ul class="footer-links list-unstyled">
                         @foreach($categories as $category)
                             <li><a href="{{ route('category.post', $category->id) }}"><i

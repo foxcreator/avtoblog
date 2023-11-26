@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
 
+    <link href="{{ asset('assets/img/front/logoforblog.png') }}" rel="icon">
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -38,6 +40,7 @@
     <!-- TinyMCE text -->
     <script src="https://cdn.tiny.cloud/1/vf1hunsd4mg70adqioziqe2ttykrqnup4xafl5xhnz527lxk/tinymce/6/tinymce.min.js"
             referrerpolicy="origin"></script>
+{{--    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>--}}
 
 
 </head>

@@ -1,6 +1,6 @@
 tinymce.init({
     selector: '.tiny-editor',
-    plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
+    plugins: ' anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks fontsize | bold italic underline strikethrough align | link image | emoticons charmap table | checklist numlist bullist indent outdent' ,
     tinycomments_mode: 'embedded',
     tinycomments_author: 'BSV',
@@ -8,6 +8,11 @@ tinymce.init({
     mergetags_list: [
         { value: 'First.Name', title: 'First Name' },
         { value: 'Email', title: 'Email' },
+    ],
+    image_class_list: [
+        { title: 'Responsive', value: 'img-responsive' },
+        { title: 'Responsive Double', value: 'img-responsive-double' },
+        // Добавьте свои стили, если необходимо
     ],
     image_dimensions: true,
     setup: function (editor) {

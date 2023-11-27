@@ -5,7 +5,7 @@
                 @foreach($articles as $article)
                     @if($loop->iteration <=1)
                     <div class="post-entry-1 lg">
-                        <a href="{{ route('show.article', $article->id) }}"><img src="{{ $article->image }}" alt="" class="img-fluid"></a>
+                        <a href="{{ route('show.article', $article->id) }}"><img src="{{ $article->image }}" alt="{{ $article->title }}" class="img-fluid"></a>
                         <div class="post-meta">
                             @foreach($article->categories as $category)
                             <span class="date">{{ $category->name }}</span>
@@ -26,7 +26,7 @@
                         @foreach($articles as $article)
                             @if($loop->iteration > 1 && $loop->iteration <= 4)
                         <div class="post-entry-1">
-                            <a href="{{ route('show.article', $article->id) }}"><img src="{{ $article->image }}" alt="" class="img-fluid"></a>
+                            <a href="{{ route('show.article', $article->id) }}"><img src="{{ $article->image }}" alt="{{ $article->title }}" class="img-fluid"></a>
                             <div class="post-meta">
                                 @foreach($article->categories as $category)
                                     <span class="date">{{ $category->name }}</span>
@@ -43,7 +43,7 @@
                         @foreach($articles as $article)
                             @if($loop->iteration > 4 && $loop->iteration <= 7)
                                 <div class="post-entry-1">
-                                    <a href="{{ route('show.article', $article->id) }}"><img src="{{ $article->image }}" alt="" class="img-fluid"></a>
+                                    <a href="{{ route('show.article', $article->id) }}"><img src="{{ $article->image }}" alt="{{ $article->title }}" class="img-fluid"></a>
                                     <div class="post-meta">
                                         @foreach($article->categories as $category)
                                             <span class="date">{{ $category->name }}</span>

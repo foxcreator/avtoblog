@@ -71,7 +71,7 @@ $categories = \App\Models\Category::all();
                 <div class="video-post">
                     <a href="{{ $currentArticle->video_url }}" class="glightbox link-video">
                         <span class="bi-play-fill"></span>
-                        <img src="{{ asset($currentArticle->video_preview) }}" alt="" class="img-fluid">
+                        <img src="{{ asset($currentArticle->video_preview) }}" alt="{{ $currentArticle->title }}" class="img-fluid">
                     </a>
                 </div>
             </div>

@@ -187,7 +187,7 @@ $posts = \App\Models\Article::orderBy('created_at', 'desc')->take(4)->get()
                         @foreach($posts as $post)
                             <li>
                                 <a href="{{ route('show.article', $post->id) }}" class="d-flex align-items-center">
-                                    <img src="{{ asset($post->image) }}" alt="" class="img-fluid me-3">
+                                    <img src="{{ asset($post->image) }}" alt="{{ $post->title }}" class="img-fluid me-3">
                                     <div>
                                         <div class="post-meta d-block">
                                             @foreach($post->categories as $category)
